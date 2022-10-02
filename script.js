@@ -18,6 +18,16 @@ function decrement (){
     }
 }
 
+// Introduction of Quiz
+var myIntroduction = [
+    {
+    heading: "Coding Quiz Challenge",
+    subtitle: "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by 5 seconds!"
+    }
+]
+    
+
+
 startButton.addEventListener("click", startTimer);
 
 //quiz set up
