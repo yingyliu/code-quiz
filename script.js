@@ -1,24 +1,24 @@
 // timer set up when user click the start quiz button
-var startButton = document.querySelector("#start");
-
 var totalSeconds = 5;
-var interval;
-
+var startButton = document.querySelector("#start");
+var timerInterval;
+// when user click the start quiz button, the timer start countdown
 function startTimer() {
     interval = setInterval(decrement, 1000);
 }
+
+// the click event is listening for timer, so the time start
+startButton.addEventListener("click", startTimer);
 
 function decrement (){
     totalSeconds--;
     document.querySelector("#timer").innerHTML = "<h2>Time: " + totalSeconds + "</h2>";
     
     if (totalSeconds === 0) {
-        clearInterval(interval);
-        document.querySelector("#timer").innerText = "<h2>Game Over!</h2>";
-    }
+        clearInterval(timerInterval);
+        document.querySelector("#timer").innerText = "Game Over!";
+    } 1000;
 }
-
-
 
 
 var main = document.main;// Introduction of Quiz
@@ -43,8 +43,6 @@ liD.setAttribute("style", "background:purple; padding: 5px");
 console.log("Coding Quiz Challenge", main);
 h1El.textContent = "Coding Quiz Challenge";
 subtitle.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by 5 seconds!"; 
-
-startButton.addEventListener("click", startTimer);
 
 //quiz set up
 var quizContainer = document.querySelector("#quiz");
@@ -99,10 +97,39 @@ liD.textContent = "The </script>";
 correctAnswer = "D"; //h3
 wrongAnswer = "Wrong!";//display text "wrong" subtracted timer with 5s.
 
+//for next question
+var nextButton = document.getElementById("next");
+var slides = document.querySelectorAll("slide");
+let currentSlide = 0;
+
+showSlide(currentSlide);
+
+nextButton.addEventListener("click", slowNextSlide);
+
+function showNextSlide() {
+    showSlide(currentSlide + 1);
+}
 
 //all questions are answered or the timer reaches 0, game is over
 
+var totalScore = "";
+h2El.textContent = "All done!";
+h3El.textContent = "Your final score is " + totalScore + ".";
 
 //save initial name and score
-var resultsContainer = document.querySelector("#results");
 var submitButton = document.querySelector("submit");
+submitButton.addEventListener("click", showReponse);
+function showReponse(event) {
+    event.preventDefault();
+    console.log(event);
+    var reponse = 
+}
+
+var resultsContainer = document.querySelector("#results");
+
+function showResult(event) {
+    event.preventDefault();
+    console. log(event);
+    var answerContainers = quizContainer.querySelectorAll("answers");
+
+}
