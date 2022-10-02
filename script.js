@@ -21,7 +21,62 @@ function decrement (){
 startButton.addEventListener("click", startTimer);
 
 //quiz set up
+var quizContainer = document.querySelector("#quiz");
+var resultsContainer = document.querySelector("#results");
+var submitButton = document.querySelector("submit");
 
+var myQuestions = [
+    {
+        question:"Which of the following is an advantage of using JavScript?",
+        answers:{
+            a:"Less server interaction",
+            b:"Immediate feedback to the visitors",
+            c:"Increased interactivity",
+            d:"All of the above"
+        },
+        correctAnswer: "D"
+    },
+    {
+        question:"Which built-in method returns the calling string value converted to upper case?",
+        answers:{
+            a:"toUpperCase()",
+            b:"toUpper()",
+            c:"changeCase",
+            d:"None of the above"
+        },
+        correctAnswer: "A"
+    }
+    {
+        question:"Which of the following function of Array object returns a string representing the array and its elements?",
+        answers:{
+            a:"toSource()",
+            b:"toString",
+            c:"splice()",
+            d:"sort()"
+        },
+        correctAnswer: "B"
+    }
+    {
+        question:"What JavaScript keyword declares a variable?",
+        answers:{
+            a:"create",
+            b:"if",
+            c:"var",
+            d:"for"
+        },
+        correctAnswer: "C"
+    }
+    {
+        question:"What should appear at the very end of your JavaScript? \n The<script LANGUAGE=JavaScript>tag",
+        answers:{
+            a:"The <script>",
+            b:"The END statement",
+            c:"None of the above",
+            d:"The </script>"
+        },
+        correctAnswer: "D"
+    }
+]
 
 //wrong answer with subtracted time from the clock
 
