@@ -1,5 +1,7 @@
+var body = document.body;
+
 // timer set up when user click the start quiz button
-var totalSeconds = 5;
+var countDown = 10;
 var startButton = document.querySelector("#start");
 var timerInterval;
 // when user click the start quiz button, the timer start countdown
@@ -7,34 +9,32 @@ function startTimer() {
     interval = setInterval(decrement, 1000);
 }
 
-// the click event is listening for timer, so the time start
-startButton.addEventListener("click", startTimer);
-
 function decrement (){
-    totalSeconds--;
+    countDown--;
     document.querySelector("#timer").innerHTML = "<h2>Time: " + totalSeconds + "</h2>";
     
     if (totalSeconds === 0) {
         clearInterval(timerInterval);
-        document.querySelector("#timer").innerText = "Game Over!";
+        document.querySelector("#timer").innerText = "Time Up!";
     } 1000;
 }
 
 
 var main = document.main;// Introduction of Quiz
 var h1El = document.createElement("h1"); //Introduction of Quiz
+var subtitle = document.createElement("h3");
 var h2El = document.createElement("h2"); //questions
 var h3El = document.createElement("h3"); //answers
 var listEl = document.createElement("div"); //create order list element
 //create order list items
-var liA = document.creatElement("li"); 
-var liB = document.creatElement("li"); 
-var liC = document.creatElement("li");
-var liD = document.creatElement("li");
+var liA = document.createElement("li"); 
+var liB = document.createElement("li"); 
+var liC = document.createElement("li");
+var liD = document.createElement("li");
 
 h1El.setAttribute("style", "margin:auto; width:50%; text-align:center; font-size:30px");
 subtitle.setAttribute("style", "margin:auto; width:50%; text-align:center; font-size:20px");
-//Add styleing to list elment
+//Add styling to list elment
 liA.setAttribute("style", "background:purple; padding: 5px");
 liB.setAttribute("style", "background:purple; padding: 5px");
 liC.setAttribute("style", "background:purple; padding: 5px");
@@ -43,17 +43,54 @@ liD.setAttribute("style", "background:purple; padding: 5px");
 console.log("Coding Quiz Challenge", main);
 h1El.textContent = "Coding Quiz Challenge";
 subtitle.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by 5 seconds!"; 
-
+body.appendChild(h1El);
 //quiz set up
 var quizContainer = document.querySelector("#quiz");
 
-//Question 1
-h2El.textContent = "Q1. Which of the following is an advantage of using JavScript?";
-liA.textContent = "Less server interaction";
-liB.textContent = "Immediate feedback to the visitors";
-liC.textContent = "Increased interactivity";
-liD.textContent = "All of the above";
+var questions = [ 
+    {
+        h1:"Q1. Which of the following is an advantage of using JavScript?",
+        Answers: [
+            "Less server interaction",
+            "Immediate feedback to the visitors",
+            "Increased interactivity",
+            "All of the above"
+        ]
+    },
+    {
+        h1:"Q2. Which built-in method returns the calling string value converted to upper case?",
+        Answers: [
+            "toUpperCase()",
+            "toUpper()",
+            "changeCase",
+            "None of the above"
+        ]
+    },
 
+
+]
+//set up counter for array
+//make your list elements into buttons and set event listener on them
+
+
+
+function startQuiz () {
+    currentQuestion++
+    console.log("start quiz has been called")
+    body.appendChild(h2El);
+    body.appendChild(liA);
+    body.appendChild(liB); 
+    body.appendChild(liC);
+    body.appendChild(liD);
+    h2El.textContent = questions[currentQuestion].h1
+    liA.textContent = questions[currentQuestion].Answers[0];
+    liB.textContent = questions[currentQuestion].Answers[1];
+    liC.textContent = questions[currentQuestion].Answers[2];
+    liD.textContent = questions[currentQuestion].Answers[3];
+    liA.addEventListener("click", startQuiz())
+}
+
+//Question 1
 correctAnswer = "D"; //h3
 wrongAnswer = "Wrong";//display text "wrong" subtracted timer with 5s.
 
@@ -100,7 +137,7 @@ wrongAnswer = "Wrong!";//display text "wrong" subtracted timer with 5s.
 //for next question
 var nextButton = document.getElementById("next");
 var slides = document.querySelectorAll("slide");
-let currentSlide = 0;
+let currentQuestion = 0;
 
 showSlide(currentSlide);
 
@@ -118,11 +155,12 @@ h3El.textContent = "Your final score is " + totalScore + ".";
 
 //save initial name and score
 var submitButton = document.querySelector("submit");
-submitButton.addEventListener("click", showReponse);
+
 function showReponse(event) {
     event.preventDefault();
     console.log(event);
-    var reponse = 
+    var reponse = ;
+    
 }
 
 var resultsContainer = document.querySelector("#results");
@@ -133,3 +171,8 @@ function showResult(event) {
     var answerContainers = quizContainer.querySelectorAll("answers");
 
 }
+
+
+startButton.addEventListener("click", startTimer);// the click event is listening for timer, so the time start
+submitButton.addEventListener("click", showReponse);
+startButton.addEventListener("click", startQuiz);
