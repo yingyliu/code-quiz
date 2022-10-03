@@ -19,7 +19,16 @@ function actionTimer() {
     }, 1000);
 }
 
+// Grading area
+var judgeCorrectElement = document.querySelector(".judge-correct");
+var judgeWrongElement = document.querySelector(".judge-wrong");
 
+function countdownHideJudgeItem(seconds) {
+    setTimeout(() => {
+        judgeCorrectElement.style.display = "none";
+        judgeWrongElement.style.display = "none";
+    }, seconds);
+}
 
 
 
