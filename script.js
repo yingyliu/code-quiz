@@ -1,23 +1,34 @@
-var body = document.body;
-
-// timer set up when user click the start quiz button
-var countDown = 100;
-var startButton = document.querySelector("#start");
-var timerInterval;
-// when user click the start quiz button, the timer start countdown
-function startTimer() {
-    timerInterval = setInterval(decrement, 100);
+// Timer setting
+var currentTimeContainerElement = document.querySelector(".current-time-container");
+var currentTimeElement = docuemnt.querySelector("#current-time");
+var initTime = 100;
+var currentTime = initTime;
+var deduction =10;
+var timer;
+currentTimeElement.textContent = currentTime;
+function actionTimer() {
+    timer = setTinterval(() => {
+        if (currentTime > 0) {
+            currentTime -= 1;
+        }
+        else {
+            currentTime = 0;
+            clearInterval(timer);
+        }
+        currentTimeElement.textContent = currentTime;
+    }, 1000);
 }
 
-function decrement () {
-    document.querySelector("#timer").innerHTML = "<h2>Time: " + countDown + "</h2>";
-    countDown--;
-    console.log(countDown)
-    if (countDown === 0) {
-        clearInterval(timerInterval);
-        document.querySelector("#timer").innerText = "Time Up!";
-    };
-}
+
+
+
+
+
+
+
+
+
+
 
 var main = document.main;// Introduction of Quiz
 var h1El = document.createElement("h1"); //Introduction of Quiz
