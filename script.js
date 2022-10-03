@@ -26,10 +26,15 @@ var h2El = document.createElement("h2"); //questions
 var h3El = document.createElement("h3"); //answers
 var listEl = document.createElement("div"); //create order list element
 //create order list items
+var ulEl = document.createElement("ul");
 var liA = document.createElement("li"); 
 var liB = document.createElement("li"); 
 var liC = document.createElement("li");
 var liD = document.createElement("li");
+ulEl.appendChild(liA);
+ulEl.appendChild(liB);
+ulEl.appendChild(liC);
+ulEl.appendChild(liD);
 
 h1El.setAttribute("style", "margin:auto; width:50%; text-align:center; font-size:30px");
 subtitle.setAttribute("style", "margin:auto; width:50%; text-align:center; font-size:20px");
@@ -44,10 +49,11 @@ h1El.textContent = "Coding Quiz Challenge";
 subtitle.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by 5 seconds!"; 
 body.appendChild(h1El);
 body.appendChild(h2El);
-body.appendChild(liA);
-body.appendChild(liB); 
-body.appendChild(liC);
-body.appendChild(liD);
+body.appendChild(ulEl);
+// body.appendChild(liA);
+// body.appendChild(liB); 
+// body.appendChild(liC);
+// body.appendChild(liD);
 
 //quiz set up
 var quizContainer = document.querySelector("#quiz");
@@ -73,21 +79,31 @@ var questions = [
         ],
         correctAnswer:0 //array index number
     },
+    
+
 
 
 ]
 //set up counter for array
 //make your list elements into buttons and set event listener on them
 
-function startQuiz () {
+function startQuiz (e,i) {
     console.log("start quiz has been called") //
     h2El.textContent = questions[currentQuestion].h1
     liA.textContent = questions[currentQuestion].Answers[0];
     liB.textContent = questions[currentQuestion].Answers[1];
     liC.textContent = questions[currentQuestion].Answers[2];
     liD.textContent = questions[currentQuestion].Answers[3];
-    currentQuestion++;
-    liA.addEventListener("click", startQuiz)
+    
+    var lis = ulEl.querySelectorAll("li");
+        if (i === questions [currentQuestion].correctAnswer) {
+            currentQuestion++;
+        }
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].addEventListener("click", function(e) {
+                return startQuiz(e,i)
+            });
+        }
 }
 
 

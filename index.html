@@ -7,23 +7,98 @@
     <title>Code Quiz</title>
 </head>
 <body>
-    <div id="timer">
-        <button id="start">Start Quiz</button>
+    <!-- timer -->
+    <div class="current-time-container">Time:<span id="current-time"></span></div>
+
+    <!-- opening page-->
+    <main>
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by 5 seconds!</p>
+        <button id="btn-start">Start Quiz</button>
+    </main>
+
+    <!-- page 1 -->
+    <section>
+        <h2>Q1. Which of the following is an advantage of using JavScript? </h2>
+        <ul>
+            <li>Less server interaction</li>
+            <li>Immediate feedback to the visitors</li>
+            <li>Increased interactivity</li>
+            <li class="correct">All of the above</li>
+        </ul>
+    </section>
+
+    <!-- page 2 -->
+    <section>
+        <h2>Q2. Which built-in method returns the calling string value converted to upper case? </h2>
+        <ul>
+            <li class="correct">toUpperCase()</li>
+            <li>toUpper()</li>
+            <li>changeCase</li>
+            <li >None of the above</li>
+        </ul>
+    </section>
+
+    <!-- page 3 -->
+    <section>
+        <h2>Q3. Which of the following function of Array object returns a string representing the array and its elements? </h2>
+        <ul>
+            <li>toSource()</li>
+            <li class="correct">toString</li>
+            <li>splice()</li>
+            <li >sort()</li>
+        </ul>
+    </section>
+
+    <!-- page 4 -->
+    <section>
+        <h2>Q4. What JavaScript keyword declares a variable?</h2>
+        <ul>
+            <li>create</li>
+            <li>if</li>
+            <li class="correct">var</li>
+            <li>for</li>
+        </ul>
+    </section>
+
+    <!-- page 5 -->
+    <section>
+        <h2>Q5. String values must be enclosed within __ when being assigned to variables.</h2>
+        <ul>
+            <li>parenthese</li>
+            <li>commas</li>
+            <li>quotes</li>
+            <li class="correct">curly brackets</li>
+        </ul>
+    </section>
+
+    <!-- final page -->
+    <section>
+        <h3>All Done!</h3>
+        <div>Your final score is <span id="final-score"></span></div>
+        <div>
+            <label>Your name</label><input type="text" id="name" /><input type = "button" value="submit"/>
+        </div>
+    </section>
+
+    <!-- grading area -->
+    <div class="judge-container">
+        <div class="judge-correct">correct</div>
+        <div class="judge-wrong">wrong</div>
     </div>
-<main>
-    <div id="quiz"></div>
-    <div class="question"></div>
-    <button id="next"></button>
-</main>
 
-<section>
-    <div id="results"></div> 
-    <button id="submit">Submit Quiz</button> 
-</section>
-    
+    <!-- result sheet-->
+    <div class = "score-sheet-container">
+        <h3>High scores</h3>
+        <ul>
+            <li></li>
+        </ul>
+        <button id="btn-goback">Go Back</button>
+        <button id="btn-clear-score">Clear Score</button>
+    </div>
 
-    <!-- Script -->
-    <script src="script.js"></script>
+        <!-- Script -->
+        <script src="script.js"></script>
     
-</body>
+    </body>
 </html>
