@@ -1,0 +1,62 @@
+/* section */
+section {
+    display: none;
+    width: 80%;
+    margin: 0 auto; /*center*/
+}
+
+section ul {
+    list-style-type: decimal;
+    display:inline;
+    padding-left: 0;
+}
+
+section ul li {
+    background-color: rgb(105, 19, 185);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+main {
+    display: block;
+    text-align: center;
+}
+
+/* grading area */
+.judge-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.judge-correct,
+.judge-wrong {
+    border-top: 1px solid grey;
+    display: none;
+}
+
+/* result area */
+.score-sheet-container {
+    display: none;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.score-sheet-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.current-timer-container {
+    text-align: right;
+}
+
+p {
+    text-align: center;
+}
+
+#btn-start,
+#btn-goback,
+#btn-clear-score {
+    background-color: rgb(105, 19, 185);
+}
+
