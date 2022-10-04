@@ -1,6 +1,6 @@
 # code-quiz
 
-![img](./img)
+![homepage-of-code-quiz](./homepage-codequiz.png)
 
 ## Description
 I generate the webpage with countdown timer, and the user need to answer a series of questions which will be graded.
@@ -27,7 +27,7 @@ I learn how to set up grading of the result at the end of the webpage, therefore
 
 
 ## Link
-https://yingyliu.github.io/password-generator/
+https://yingyliu.github.io/code-quiz/
 
 ## License
 Please refer to the LICENSE in the repo.
