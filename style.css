@@ -1,30 +1,44 @@
 /* section */
 section {
     display: none;
-    width: 80%;
+    width: 40%;
     margin: 0 auto; /*center*/
 }
 
 section ul {
     list-style-type: decimal;
-    display:inline;
+    display:inline-block;
     padding-left: 0;
+    
 }
 
 section ul li {
-    background-color: rgb(105, 19, 185);
+    background-color: rgb(165, 107, 220);
     padding: 10px;
     margin-bottom: 10px;
+    font-size: 16px;
 }
 
-main {
+section.home {
     display: block;
     text-align: center;
 }
 
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
 /* grading area */
 .judge-container {
-    width: 80%;
+    width: 40%;
     margin: 0 auto;
 }
 
@@ -37,7 +51,7 @@ main {
 /* result area */
 .score-sheet-container {
     display: none;
-    width: 80%;
+    width: 40%;
     margin: 0 auto;
 }
 
@@ -46,17 +60,21 @@ main {
     padding-left: 0;
 }
 
-.current-timer-container {
+.current-time-container {
     text-align: right;
+    font-size: 18px;
 }
 
 p {
     text-align: center;
+    font-size: 20px;
 }
 
 #btn-start,
 #btn-goback,
-#btn-clear-score {
-    background-color: rgb(105, 19, 185);
+#btn-clear-score,
+#submit {
+    font-size: 16px;
+    background-color: rgb(165, 107, 220);
 }
 
